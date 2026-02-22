@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Mono.Cecil;
 
 public class CardSpawner : MonoBehaviour
 {
@@ -9,11 +8,13 @@ public class CardSpawner : MonoBehaviour
 
     public List<CardData> allCards;
 
-    public void SpawnRandomCard() 
+    public CardUI currentCard;
+
+    public void SpawnRandomCard()
     {
         int randomIndx = Random.Range(0, allCards.Count);
 
-        CardUI newCard = Instantiate(cardPrefab, cardContainer);
-        newCard.Setup(allCards[randomIndx]);
+        currentCard = Instantiate(cardPrefab, cardContainer);
+        currentCard.Setup(allCards[randomIndx]);
     }
 }

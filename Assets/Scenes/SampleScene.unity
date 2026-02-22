@@ -493,6 +493,8 @@ MonoBehaviour:
   cardContainer: {fileID: 1187024510}
   allCards:
   - {fileID: 11400000, guid: 6b4f0edfd92e0d542b0ec16531cee50f, type: 2}
+  - {fileID: 11400000, guid: f6b92558ad883674fa3a5e85f70c2d4e, type: 2}
+  currentCard: {fileID: 0}
 --- !u!4 &545682104
 Transform:
   m_ObjectHideFlags: 0
@@ -587,6 +589,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestManager
   spawner: {fileID: 545682103}
+  currentDay: 0
+  dayDuration: 24
+  dayTimer: 0
   StatA: 0
   StatB: 0
   StatC: 0

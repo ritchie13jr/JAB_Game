@@ -6,13 +6,19 @@ public class TestManager : MonoBehaviour
     public static TestManager instance;
     public CardSpawner spawner;
 
+    public int currentDay = 0; //!
+    public float dayDuration = 24.0f;
+    public float dayTimer; //!
+
     [Header("Stats")]
-    public float StatA;
-    public float StatB;
-    public float StatC;
-    public float StatD;
+    public float StatA; //!
+    public float StatB; //!
+    public float StatC; //!
+    public float StatD; //!
 
     public float maxForStat = 100.0f;
+
+    private bool startDay = false;
 
     private void Awake()
     {
@@ -26,6 +32,11 @@ public class TestManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        GoToNextDay();
+    }
+
     void InitializeStats()
     {
         StatA = 25f;
@@ -36,6 +47,17 @@ public class TestManager : MonoBehaviour
 
     private void Update()
     {
+
+
+        if (!startDay)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                StartDayProgress();
+            }
+            return;
+        }
+
         StatA -= Time.deltaTime;
         StatB -= Time.deltaTime;
         StatC -= Time.deltaTime;
@@ -43,10 +65,7 @@ public class TestManager : MonoBehaviour
 
         ClampStats();
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            spawner.SpawnRandomCard();
-        }
+        DayProgress(Time.deltaTime);
     }
 
     void ClampStats()
@@ -59,7 +78,7 @@ public class TestManager : MonoBehaviour
 
     public void GetNextCard()
     {
-        // Aqui de una lista de cartas que le añadimos o creamos dinamicamente le pasamos la siguiente para que se ponga
+        spawner.SpawnRandomCard();
     }
 
     public void ModifyStat(List<StatModifier> modifier)
@@ -84,5 +103,31 @@ public class TestManager : MonoBehaviour
         }
 
         ClampStats();
+    }
+
+    public void DayProgress(float deltaTime)
+    {
+        dayTimer += deltaTime;
+
+        if (dayTimer >= dayDuration)
+        {
+            GoToNextDay();
+        }
+    }
+    public void GoToNextDay()
+    {
+        if (spawner.currentCard != null)
+        spawner.currentCard.RemoveCard();
+
+        dayTimer = 0;
+        currentDay++;
+
+        startDay = false;
+    }
+
+    public void StartDayProgress()
+    {
+        startDay = true;
+        GetNextCard();
     }
 }

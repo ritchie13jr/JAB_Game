@@ -11,7 +11,7 @@ public class CardUI : MonoBehaviour
 
     private CardData cardData;
 
-    public void Setup(CardData card) 
+    public void Setup(CardData card)
     {
         cardData = card;
         titleTxt.text = card.title;
@@ -21,16 +21,21 @@ public class CardUI : MonoBehaviour
         noButton.onClick.AddListener(OnNoButton);
     }
 
-    public void OnPublishedButton() 
+    public void OnPublishedButton()
     {
         TestManager.instance.ModifyStat(cardData.publishEffects);
         TestManager.instance.GetNextCard();
-        Destroy(gameObject);
+        RemoveCard();
     }
 
-    public void OnNoButton() 
+    public void OnNoButton()
     {
         TestManager.instance.GetNextCard();
+        RemoveCard();
+    }
+
+    public void RemoveCard()
+    {
         Destroy(gameObject);
     }
 }
