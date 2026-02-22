@@ -9,7 +9,7 @@ public class CardSpawner : MonoBehaviour
 
     public List<CardData> allCards;
 
-    public void SpawnRadnomCard() 
+    public void SpawnRandomCard() 
     {
         int randomIndx = Random.Range(0, allCards.Count);
 

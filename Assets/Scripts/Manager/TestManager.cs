@@ -1,12 +1,10 @@
-using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
-using NUnit.Framework.Constraints;
-using System;
 
 public class TestManager : MonoBehaviour
 {
     public static TestManager instance;
+    public CardSpawner spawner;
 
     [Header("Stats")]
     public float StatA;
@@ -18,7 +16,7 @@ public class TestManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null) 
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -28,7 +26,7 @@ public class TestManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-   void InitializeStats() 
+    void InitializeStats()
     {
         StatA = 25f;
         StatB = 25f;
@@ -44,26 +42,31 @@ public class TestManager : MonoBehaviour
         StatD -= Time.deltaTime;
 
         ClampStats();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            spawner.SpawnRandomCard();
+        }
     }
 
-    void ClampStats() 
+    void ClampStats()
     {
         StatA = Mathf.Clamp(StatA, 0.0f, maxForStat);
-        StatB = Mathf.Clamp(StatA, 0.0f, maxForStat);
-        StatC = Mathf.Clamp(StatA, 0.0f, maxForStat);
-        StatD = Mathf.Clamp(StatA, 0.0f, maxForStat);
+        StatB = Mathf.Clamp(StatB, 0.0f, maxForStat);
+        StatC = Mathf.Clamp(StatC, 0.0f, maxForStat);
+        StatD = Mathf.Clamp(StatD, 0.0f, maxForStat);
     }
 
-    public void GetNextCard() 
+    public void GetNextCard()
     {
         // Aqui de una lista de cartas que le añadimos o creamos dinamicamente le pasamos la siguiente para que se ponga
     }
 
-    public void ModifyStat(List<StatModifier> modifier) 
+    public void ModifyStat(List<StatModifier> modifier)
     {
-        foreach (var mod in modifier) 
+        foreach (var mod in modifier)
         {
-            switch (mod.StatType) 
+            switch (mod.StatType)
             {
                 case StatType.StatA:
                     StatA += mod.amount;
@@ -72,7 +75,7 @@ public class TestManager : MonoBehaviour
                     StatB += mod.amount;
                     return;
                 case StatType.StatC:
-                    StatC += mod.amount;   
+                    StatC += mod.amount;
                     return;
                 case StatType.StatD:
                     StatD += mod.amount;
