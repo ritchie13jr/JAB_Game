@@ -18,9 +18,9 @@ MonoBehaviour:
     Content Crackdown!\u201D"
   publishEffects:
   - StatType: 0
-    amount: 0
-  - StatType: 1
     amount: 10
+  - StatType: 1
+    amount: 15
   - StatType: 2
     amount: 0
   - StatType: 3

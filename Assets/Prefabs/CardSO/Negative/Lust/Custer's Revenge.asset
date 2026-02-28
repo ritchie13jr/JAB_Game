@@ -20,7 +20,7 @@ MonoBehaviour:
   - StatType: 0
     amount: 0
   - StatType: 1
-    amount: 10
+    amount: 15
   - StatType: 2
     amount: 10
   - StatType: 3

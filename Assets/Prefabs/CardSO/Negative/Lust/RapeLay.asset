@@ -18,9 +18,9 @@ MonoBehaviour:
     Content Limits!\u201D"
   publishEffects:
   - StatType: 0
-    amount: 0
+    amount: 5
   - StatType: 1
-    amount: 10
+    amount: 20
   - StatType: 2
     amount: 0
   - StatType: 3

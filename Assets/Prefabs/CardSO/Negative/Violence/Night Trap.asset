@@ -18,10 +18,10 @@ MonoBehaviour:
     Showdown Over \u2018Video Violence!\u2019\u201D"
   publishEffects:
   - StatType: 0
-    amount: 10
+    amount: 23
   - StatType: 1
     amount: 0
   - StatType: 2
-    amount: 0
+    amount: 2
   - StatType: 3
     amount: 0

@@ -21,6 +21,6 @@ MonoBehaviour:
   - StatType: 1
     amount: 0
   - StatType: 2
-    amount: 30
+    amount: 25
   - StatType: 3
     amount: 0

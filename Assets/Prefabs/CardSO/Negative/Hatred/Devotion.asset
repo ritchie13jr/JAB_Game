@@ -18,10 +18,10 @@ MonoBehaviour:
     Political Backlash!\u201D"
   publishEffects:
   - StatType: 0
-    amount: 10
+    amount: 5
   - StatType: 1
     amount: 0
   - StatType: 2
-    amount: 10
+    amount: 20
   - StatType: 3
     amount: 0
