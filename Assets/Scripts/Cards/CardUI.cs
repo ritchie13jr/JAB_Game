@@ -15,7 +15,7 @@ public class CardUI : MonoBehaviour
     public void Setup(CardData card)
     {
         cardData = card;
-        titleTxt.text = card.title;
+        titleTxt.text = (card.title != "")? card.title : card.name;
         descriptionTxt.text = card.description;
         backgroundImg.sprite = card.background;
 

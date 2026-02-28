@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
   background: {fileID: 0}
-  description: 
+  description: "\u201CObscenity or Art? \u2018Saori\u2019 Seized in International
+    Content Crackdown!\u201D"
   publishEffects:
   - StatType: 0
     amount: 0

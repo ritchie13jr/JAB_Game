@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
   background: {fileID: 0}
-  description: 
+  description: "\u201CImport Inferno! \u2018RapeLay\u2019 Ignites Global Debate Over
+    Content Limits!\u201D"
   publishEffects:
   - StatType: 0
     amount: 0

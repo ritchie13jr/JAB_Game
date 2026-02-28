@@ -151,10 +151,20 @@ MonoBehaviour:
   cardPrefab: {fileID: 3890904030511742534, guid: 59e23d94c48857e45a8dc88c205ba464, type: 3}
   cardContainer: {fileID: 1638687927}
   allCards:
-  - {fileID: 11400000, guid: 6b4f0edfd92e0d542b0ec16531cee50f, type: 2}
-  - {fileID: 11400000, guid: f6b92558ad883674fa3a5e85f70c2d4e, type: 2}
-  - {fileID: 11400000, guid: 9511289c13cadc54db9ea86e9f4a2ff9, type: 2}
-  - {fileID: 11400000, guid: 623c59d8c07ad104dbb9a3e260712974, type: 2}
+  - {fileID: 11400000, guid: 09cb7e6267cb85147a705fb9bc4add68, type: 2}
+  - {fileID: 11400000, guid: 2c271c6b9be555649bd62c2034ff3ab6, type: 2}
+  - {fileID: 11400000, guid: 74c1edff7c2169c45a589a8637518aee, type: 2}
+  - {fileID: 11400000, guid: 7f69fc4c727866f4aa9e8c9ea3365928, type: 2}
+  - {fileID: 11400000, guid: ced50c4e0db25344da969754c751dc50, type: 2}
+  - {fileID: 11400000, guid: ba1a2f8d4ddb9c64f84e8e4ffaaf7dd0, type: 2}
+  - {fileID: 11400000, guid: e8807635b15b13e4494c18fb47be26ac, type: 2}
+  - {fileID: 11400000, guid: 38e2d6684721f8b44a76dc8ab507c72f, type: 2}
+  - {fileID: 11400000, guid: 6281f30b10148f1479eaab20b5ae03bb, type: 2}
+  - {fileID: 11400000, guid: df37c1722b72980458d926fc757325b3, type: 2}
+  - {fileID: 11400000, guid: 06464db33617a274da4e859db18a7eb3, type: 2}
+  - {fileID: 11400000, guid: 2150b6612fad59a4fbd96e86cfb6a951, type: 2}
+  - {fileID: 11400000, guid: 0d3b7feccf6fa3b4da9bd56e64f61be9, type: 2}
+  - {fileID: 11400000, guid: 6b09c36b441f1044fb33bd4c8ee62d0d, type: 2}
   currentCard: {fileID: 0}
 --- !u!4 &545682104
 Transform:
@@ -569,6 +579,7 @@ MonoBehaviour:
   m_Fade: {fileID: 2093907354}
   m_GameOverText: {fileID: 858433254}
   LoseOnAnyZero: 1
+  LoseOnAnyMax: 0
   maxForStat: 100
   statInitialValue: 25
   statDecay:
@@ -579,7 +590,7 @@ MonoBehaviour:
   - StatType: 2
     amount: -10
   - StatType: 3
-    amount: -10
+    amount: 0
   currentDay: 0
   DayTimerProgress: 0
   dayDuration: 24

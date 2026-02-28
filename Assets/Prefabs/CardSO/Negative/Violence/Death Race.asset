@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2e15fe6f1053d4cbf79d17398664e4, type: 3}
   m_Name: Death Race
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  title: A
+  title: 
   background: {fileID: 0}
-  description: 
+  description: "\u201CArcade or Atrocity? \u2018Death Race\u2019 Accused of Glorifying
+    Vehicular Violence!\u201D"
   publishEffects:
   - StatType: 0
     amount: 10

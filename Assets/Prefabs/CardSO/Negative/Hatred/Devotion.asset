@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
   background: {fileID: 0}
-  description: 
+  description: "\u201CHorror Pulled Offline! \u2018Devotion\u2019 Disappears After
+    Political Backlash!\u201D"
   publishEffects:
   - StatType: 0
     amount: 10

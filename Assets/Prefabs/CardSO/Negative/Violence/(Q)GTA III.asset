@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2e15fe6f1053d4cbf79d17398664e4, type: 3}
   m_Name: (Q)GTA III
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  title: A
+  title: 
   background: {fileID: 0}
   description: 
   publishEffects:

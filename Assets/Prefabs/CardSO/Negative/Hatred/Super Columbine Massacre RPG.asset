@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
   background: {fileID: 0}
-  description: 
+  description: "\u201CShockwave Title! \u2018Super Columbian Massacre RPG\u2019 Sparks
+    Global Condemnation!\u201D"
   publishEffects:
   - StatType: 0
     amount: 10

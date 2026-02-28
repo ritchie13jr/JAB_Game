@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
   background: {fileID: 0}
-  description: 
+  description: "\u201CRevolution or Rebellion? \u2018Freedom!\u2019 Game Triggers
+    Government Ban!\u201D"
   publishEffects:
   - StatType: 0
     amount: 10

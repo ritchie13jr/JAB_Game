@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
   background: {fileID: 0}
-  description: 
+  description: "\u201CHidden Heat! \u2018Hot Coffee\u2019 Code Turns \u2018San Andreas\u2019
+    Into Ratings Firestorm!\u201D"
   publishEffects:
   - StatType: 0
     amount: 0
