@@ -21,7 +21,10 @@ public class Fade : MonoBehaviour
         m_FadeImage.color = new Color(0.0f, 0.0f, 0.0f, m_IsFadeIn ? l_Pct : 1.0f - l_Pct);
         if (l_Pct == 1.0f)
         {
-            m_OnFadeEndedFn();
+            if (m_OnFadeEndedFn != null)
+            {
+                m_OnFadeEndedFn();
+            }
         }
     }
     public void FadeIn(OnFadeEndedFn _OnFadeEndedFn)

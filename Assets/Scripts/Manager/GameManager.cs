@@ -1,21 +1,20 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
-public class TestManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static TestManager instance;
-    public CardSpawner spawner;
-    public Fade UI;
+    public static GameManager Instance;
+    public CardSpawner m_Spawner;
+    public Fade m_Fade;
+    public Text m_GameOverText;
 
     [Header("Win / Lose onditions")]
     public bool LoseOnAnyZero = true;
+    private bool m_gameOver;
 
     [Header("Stats")]
-    //public float StatA; //!
-    //public float StatB; //!
-    //public float StatC; //!
-    //public float StatD; //!
     private Dictionary<string, float> stats = new Dictionary<string, float>();
 
     public float maxForStat = 100.0f;
@@ -41,9 +40,9 @@ public class TestManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -62,33 +61,57 @@ public class TestManager : MonoBehaviour
         stats.Add("StatB", statInitialValue);
         stats.Add("StatC", statInitialValue);
         stats.Add("StatD", statInitialValue);
-        //StatA = statInitialValue;
-        //StatB = statInitialValue;
-        //StatC = statInitialValue;
-        //StatD = statInitialValue;
     }
+
+    void RestartGame()
+    {
+        ResetStats();
+
+        ResetProgressValues();
+
+        m_gameOver = false;
+    }
+
+    void ResetStats()
+    {
+        stats.Clear();
+        InitializeStats();
+    }
+
+    void ResetProgressValues()
+    {
+        if (DayTimerProgress) dayTimer = 0.0f;
+        else cardCounter = 0;
+    }
+
 
     private void Update()
     {
+        if (m_gameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.Space)) RestartGame();
+            return;
+        }
+        
         if (!startDay)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (DayTimerProgress)
             {
-                StartDayProgress();
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartDayProgress();
+                }
+                return;
             }
-            return;
+            else { StartDayProgress(); }
         }
 
         if (DayTimerProgress)
         {
-            foreach (var key in stats.Keys)
+            foreach (var key in stats.Keys.ToList())
             {
                 stats[key] -= Time.deltaTime;
             }
-            //StatA -= Time.deltaTime;
-            //StatB -= Time.deltaTime;
-            //StatC -= Time.deltaTime;
-            //StatD -= Time.deltaTime;
 
             ClampStats();
 
@@ -100,9 +123,7 @@ public class TestManager : MonoBehaviour
             DayCardProgrss();
         }
 
-
-        if (CheckGameOverConditions()) Debug.Log("GAME OVER");
-
+        if (CheckGameOverConditions()) GameOver();
     }
 
     void ClampStats()
@@ -111,15 +132,11 @@ public class TestManager : MonoBehaviour
         {
             stats[key] = Mathf.Clamp(stats[key], 0.0f, maxForStat);
         }
-        //StatA = Mathf.Clamp(StatA, 0.0f, maxForStat);
-        //StatB = Mathf.Clamp(StatB, 0.0f, maxForStat);
-        //StatC = Mathf.Clamp(StatC, 0.0f, maxForStat);
-        //StatD = Mathf.Clamp(StatD, 0.0f, maxForStat);
     }
 
     public void GetNextCard()
     {
-        spawner.SpawnRandomCard();
+        m_Spawner.SpawnRandomCard();
         cardCounter++;
 
         ClampStats();
@@ -133,19 +150,15 @@ public class TestManager : MonoBehaviour
             {
                 case StatType.StatA:
                     stats["StatA"] += mod.amount;
-                    //StatA += mod.amount;
                     break;
                 case StatType.StatB:
                     stats["StatB"] += mod.amount;
-                    //StatB += mod.amount;
                     break;
                 case StatType.StatC:
                     stats["StatC"] += mod.amount;
-                    //StatC += mod.amount;
                     break;
                 case StatType.StatD:
                     stats["StatD"] += mod.amount;
-                    //StatD += mod.amount;
                     break;
             }
         }
@@ -153,7 +166,7 @@ public class TestManager : MonoBehaviour
         ClampStats();
     }
 
-    public void DayTimeProgress(float deltaTime)
+    void DayTimeProgress(float deltaTime)
     {
         dayTimer += deltaTime;
 
@@ -162,7 +175,7 @@ public class TestManager : MonoBehaviour
             GoToNextDayWithFade();
         }
     }
-    public void DayCardProgrss()
+    void DayCardProgrss()
     {
         if (cardCounter > cardsPerDay)
         {
@@ -170,47 +183,38 @@ public class TestManager : MonoBehaviour
             ModifyStat(statDecay);
         }
     }
-    public void GoToNextDay()
+    void GoToNextDay()
     {
-        if (spawner.currentCard != null)
-            spawner.currentCard.RemoveCard();
+        if (m_Spawner.currentCard != null)
+            m_Spawner.currentCard.RemoveCard();
 
         currentDay++;
         startDay = false;
-
-        //ResetProgressValues(); //?
     }
 
-    public void StartDayProgress()
+    void StartDayProgress()
     {
         startDay = true;
         GetNextCard();
     }
 
-    public void GoToNextDayWithFade()
+    void GoToNextDayWithFade()
     {
-        //Debug.Log("GoToNextDayWithFade called");
         ResetProgressValues();
 
-        if (!DayTimerProgress) spawner.currentCard.RemoveCard();
+        if (!DayTimerProgress) m_Spawner.currentCard.RemoveCard();
 
-        UI.FadeIn(() =>
+        m_Fade.FadeIn(() =>
         {
             GoToNextDay();
-            UI.FadeOut(() =>
+            m_Fade.FadeOut(() =>
             {
-                UI.gameObject.SetActive(false);
+                m_Fade.gameObject.SetActive(false);
             });
         });
     }
 
-    public void ResetProgressValues()
-    {
-        if (DayTimerProgress) dayTimer = 0.0f;
-        else cardCounter = 0;
-    }
-
-    public bool CheckGameOverConditions()
+    bool CheckGameOverConditions()
     {
         if (LoseOnAnyZero)
         {
@@ -220,11 +224,17 @@ public class TestManager : MonoBehaviour
             }
         }
 
-        //if (StatA == 0) return true;
-        //if (StatB == 0) return true;
-        //if (StatC == 0) return true;
-        //if (StatD == 0) return true;
-
         return false;
     }
+
+    void GameOver()
+    {
+        m_gameOver = true;
+        m_Fade.FadeIn(() =>
+        {
+            m_GameOverText.gameObject.SetActive(true);
+        });
+    }
+
+
 }

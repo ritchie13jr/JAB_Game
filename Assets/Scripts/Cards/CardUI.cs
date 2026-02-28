@@ -23,14 +23,14 @@ public class CardUI : MonoBehaviour
 
     public void OnPublishedButton()
     {
-        TestManager.instance.ModifyStat(cardData.publishEffects);
-        TestManager.instance.GetNextCard();
+        GameManager.Instance.ModifyStat(cardData.publishEffects);
+        GameManager.Instance.GetNextCard();
         RemoveCard();
     }
 
     public void OnNoButton()
     {
-        TestManager.instance.GetNextCard();
+        GameManager.Instance.GetNextCard();
         RemoveCard();
     }
 
