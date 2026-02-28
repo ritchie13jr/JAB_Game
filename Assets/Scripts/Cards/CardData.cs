@@ -8,6 +8,7 @@ public class CardData : ScriptableObject
 {
     [Header("Card Info")]
     public string title;
+    public Sprite background;
     [TextArea]
     public string description;
 

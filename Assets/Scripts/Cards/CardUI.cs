@@ -8,6 +8,7 @@ public class CardUI : MonoBehaviour
     public TextMeshProUGUI descriptionTxt;
     public Button publishButton;
     public Button noButton;
+    public Image backgroundImg;
 
     private CardData cardData;
 
@@ -16,6 +17,8 @@ public class CardUI : MonoBehaviour
         cardData = card;
         titleTxt.text = card.title;
         descriptionTxt.text = card.description;
+        backgroundImg.sprite = card.background;
+
 
         publishButton.onClick.AddListener(OnPublishedButton);
         noButton.onClick.AddListener(OnNoButton);

@@ -793,3 +793,4 @@ MonoBehaviour:
   descriptionTxt: {fileID: 1914099509097132340}
   publishButton: {fileID: 2813819268972999226}
   noButton: {fileID: 8714763710955220710}
+  backgroundImg: {fileID: 5238801063410539838}

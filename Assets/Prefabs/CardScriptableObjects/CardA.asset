@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CardA
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: A
+  background: {fileID: 0}
   description: 
   publishEffects:
   - StatType: 0
