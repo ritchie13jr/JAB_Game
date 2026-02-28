@@ -6,10 +6,6 @@ public class TestManager : MonoBehaviour
     public static TestManager instance;
     public CardSpawner spawner;
 
-    public int currentDay = 0; //!
-    public float dayDuration = 24.0f;
-    public float dayTimer; //!
-
     [Header("Stats")]
     public float StatA; //!
     public float StatB; //!
@@ -19,12 +15,23 @@ public class TestManager : MonoBehaviour
     public float maxForStat = 100.0f;
     public float statInitialValue = 25.0f;
 
+    public List<StatModifier> statDecay;
+
+    [Header("DayProgress")]
+    public int currentDay = 0; //!
     private bool startDay = false;
 
     public bool DayTimerProgress = true;
 
+    [Header("If DayTimerProgress is true")]
+    public float dayDuration = 24.0f;
+    public float dayTimer; //!
+
+
+    [Header("If DayTimerProgress is false")]
     public int cardsPerDay = 3;
     public int cardCounter = -1; //!
+
 
     private void Awake()
     {
@@ -97,8 +104,9 @@ public class TestManager : MonoBehaviour
     public void GetNextCard()
     {
         spawner.SpawnRandomCard();
-        ClampStats();
         cardCounter++;
+
+        ClampStats();
     }
 
     public void ModifyStat(List<StatModifier> modifier)
@@ -139,6 +147,7 @@ public class TestManager : MonoBehaviour
         if (cardCounter > cardsPerDay)
         {
             GoToNextDay();
+            ModifyStat(statDecay);
         }
     }
     public void GoToNextDay()

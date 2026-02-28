@@ -954,6 +954,15 @@ MonoBehaviour:
   DayTimerProgress: 0
   cardsPerDay: 3
   cardCounter: 0
+  statDecay:
+  - StatType: 0
+    amount: -10
+  - StatType: 1
+    amount: -10
+  - StatType: 2
+    amount: -10
+  - StatType: 3
+    amount: -10
 --- !u!4 &994194396
 Transform:
   m_ObjectHideFlags: 0
