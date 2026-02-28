@@ -943,10 +943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TestManager
   spawner: {fileID: 545682103}
   UI: {fileID: 2093907354}
-  StatA: 0
-  StatB: 0
-  StatC: 0
-  StatD: 0
+  LoseOnAnyZero: 1
   maxForStat: 100
   statInitialValue: 25
   statDecay:
@@ -991,7 +988,7 @@ GameObject:
   - component: {fileID: 1036866975}
   - component: {fileID: 1036866974}
   m_Layer: 5
-  m_Name: FadeInImage
+  m_Name: FadeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2614,7 +2611,7 @@ GameObject:
   - component: {fileID: 2093907351}
   - component: {fileID: 2093907350}
   m_Layer: 5
-  m_Name: HUD
+  m_Name: Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
