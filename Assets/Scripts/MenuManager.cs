@@ -21,7 +21,7 @@ public class MenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        Debug.Log("PLAY PRESSED");
+        //Debug.Log("PLAY PRESSED");
         menuCanvas.SetActive(false);
         StartCoroutine(MoveCamera(gamePoint));
     }

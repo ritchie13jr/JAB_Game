@@ -1,6 +1,7 @@
-using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public CardSpawner m_Spawner;
     public Fade m_Fade;
-    public Text m_GameOverText;
+    public TextMeshProUGUI m_GameOverText;
 
     [Header("Win / Lose onditions")]
     public bool LoseOnAnyZero = true;
@@ -73,7 +74,10 @@ public class GameManager : MonoBehaviour
 
         m_gameOver = false;
 
-        m_Fade.FadeOut(() => { });
+        m_Fade.FadeOut(() =>
+        {
+            m_Fade.gameObject.SetActive(false);
+        });
     }
 
     void ResetStats()
