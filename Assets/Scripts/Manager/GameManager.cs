@@ -58,25 +58,48 @@ public class GameManager : MonoBehaviour
 
     void InitializeStats()
     {
-        stats.Add("StatA", statInitialValue);
-        stats.Add("StatB", statInitialValue);
-        stats.Add("StatC", statInitialValue);
-        stats.Add("StatD", statInitialValue);
-    }
+        stats.Add("VIOLENCE", statInitialValue);
+        stats.Add("LUST", statInitialValue);
+        stats.Add("HATRED", statInitialValue);
+        stats.Add("?", statInitialValue);
 
+        ClampStats();
+    }
+    public void ModifyStat(List<StatModifier> modifier)
+    {
+        foreach (var mod in modifier)
+        {
+            switch (mod.StatType)
+            {
+                case StatType.StatA:
+                    stats["VIOLENCE"] += mod.amount;
+                    break;
+                case StatType.StatB:
+                    stats["LUST"] += mod.amount;
+                    break;
+                case StatType.StatC:
+                    stats["HATRED"] += mod.amount;
+                    break;
+                case StatType.StatD:
+                    stats["?"] += mod.amount;
+                    break;
+            }
+        }
+
+        ClampStats();
+    }
     void RestartGame()
     {
+        m_gameOver = false;
         m_GameOverText.gameObject.SetActive(false);
 
         ResetStats();
 
-        ResetProgressValues();
-
-        m_gameOver = false;
-
         m_Fade.FadeOut(() =>
         {
             m_Fade.gameObject.SetActive(false);
+            ResetProgressValues();
+            startDay = false;
         });
     }
 
@@ -146,30 +169,6 @@ public class GameManager : MonoBehaviour
     {
         m_Spawner.SpawnRandomCard();
         cardCounter++;
-
-        ClampStats();
-    }
-
-    public void ModifyStat(List<StatModifier> modifier)
-    {
-        foreach (var mod in modifier)
-        {
-            switch (mod.StatType)
-            {
-                case StatType.StatA:
-                    stats["StatA"] += mod.amount;
-                    break;
-                case StatType.StatB:
-                    stats["StatB"] += mod.amount;
-                    break;
-                case StatType.StatC:
-                    stats["StatC"] += mod.amount;
-                    break;
-                case StatType.StatD:
-                    stats["StatD"] += mod.amount;
-                    break;
-            }
-        }
 
         ClampStats();
     }
