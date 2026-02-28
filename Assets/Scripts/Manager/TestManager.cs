@@ -5,6 +5,7 @@ public class TestManager : MonoBehaviour
 {
     public static TestManager instance;
     public CardSpawner spawner;
+    public Fade UI;
 
     [Header("Stats")]
     public float StatA; //!
@@ -30,7 +31,7 @@ public class TestManager : MonoBehaviour
 
     [Header("If DayTimerProgress is false")]
     public int cardsPerDay = 3;
-    public int cardCounter = -1; //!
+    public int cardCounter = 0; //!
 
 
     private void Awake()
@@ -88,9 +89,9 @@ public class TestManager : MonoBehaviour
             DayCardProgrss();
         }
 
-       
 
-       
+
+
     }
 
     void ClampStats()
@@ -139,32 +140,54 @@ public class TestManager : MonoBehaviour
 
         if (dayTimer >= dayDuration)
         {
-            GoToNextDay();
+            GoToNextDayWithFade();
         }
     }
     public void DayCardProgrss()
     {
         if (cardCounter > cardsPerDay)
         {
-            GoToNextDay();
+            GoToNextDayWithFade();
             ModifyStat(statDecay);
         }
     }
     public void GoToNextDay()
     {
         if (spawner.currentCard != null)
-        spawner.currentCard.RemoveCard();
+            spawner.currentCard.RemoveCard();
 
         currentDay++;
         startDay = false;
 
-        if (DayTimerProgress) dayTimer = 0;
-        else cardCounter = -1;
+        //ResetProgressValues(); //?
     }
 
     public void StartDayProgress()
     {
         startDay = true;
         GetNextCard();
+    }
+
+    public void GoToNextDayWithFade()
+    {
+        //Debug.Log("GoToNextDayWithFade called");
+        ResetProgressValues();
+
+        if(!DayTimerProgress) spawner.currentCard.RemoveCard();
+        
+        UI.FadeIn(() =>
+        {
+            GoToNextDay();
+            UI.FadeOut(() =>
+            {
+                UI.gameObject.SetActive(false);
+            });
+        });
+    }
+
+    public void ResetProgressValues()
+    {
+        if (DayTimerProgress) dayTimer = 0.0f;
+        else cardCounter = 0;
     }
 }
