@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Win / Lose onditions")]
     public bool LoseOnAnyZero = true;
+    public bool LoseOnAnyMax = false;
     private bool m_gameOver;
 
     [Header("Stats")]
@@ -228,6 +229,14 @@ public class GameManager : MonoBehaviour
             foreach (var value in stats.Values)
             {
                 if (value <= 0.0f) return true;
+            }
+        }
+
+        if (LoseOnAnyMax)
+        {
+            foreach (var value in stats.Values)
+            {
+                if (value >= maxForStat) return true;
             }
         }
 
