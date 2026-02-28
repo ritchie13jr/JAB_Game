@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2e15fe6f1053d4cbf79d17398664e4, type: 3}
   m_Name: CardA
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  title: TestOnAStat
+  title: A
   description: 
   publishEffects:
   - StatType: 0
     amount: 35
+  - StatType: 1
+    amount: 5
+  - StatType: 2
+    amount: -20
+  - StatType: 3
+    amount: -20

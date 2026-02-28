@@ -629,6 +629,8 @@ MonoBehaviour:
   allCards:
   - {fileID: 11400000, guid: 6b4f0edfd92e0d542b0ec16531cee50f, type: 2}
   - {fileID: 11400000, guid: f6b92558ad883674fa3a5e85f70c2d4e, type: 2}
+  - {fileID: 11400000, guid: 9511289c13cadc54db9ea86e9f4a2ff9, type: 2}
+  - {fileID: 11400000, guid: 623c59d8c07ad104dbb9a3e260712974, type: 2}
   currentCard: {fileID: 0}
 --- !u!4 &545682104
 Transform:
@@ -948,6 +950,10 @@ MonoBehaviour:
   StatC: 0
   StatD: 0
   maxForStat: 100
+  statInitialValue: 25
+  DayTimerProgress: 0
+  cardsPerDay: 3
+  cardCounter: 0
 --- !u!4 &994194396
 Transform:
   m_ObjectHideFlags: 0

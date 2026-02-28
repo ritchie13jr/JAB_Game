@@ -17,8 +17,14 @@ public class TestManager : MonoBehaviour
     public float StatD; //!
 
     public float maxForStat = 100.0f;
+    public float statInitialValue = 25.0f;
 
     private bool startDay = false;
+
+    public bool DayTimerProgress = true;
+
+    public int cardsPerDay = 3;
+    public int cardCounter = -1; //!
 
     private void Awake()
     {
@@ -39,10 +45,10 @@ public class TestManager : MonoBehaviour
 
     void InitializeStats()
     {
-        StatA = 25f;
-        StatB = 25f;
-        StatC = 25f;
-        StatD = 25f;
+        StatA = statInitialValue;
+        StatB = statInitialValue;
+        StatC = statInitialValue;
+        StatD = statInitialValue;
     }
 
     private void Update()
@@ -58,14 +64,26 @@ public class TestManager : MonoBehaviour
             return;
         }
 
-        StatA -= Time.deltaTime;
-        StatB -= Time.deltaTime;
-        StatC -= Time.deltaTime;
-        StatD -= Time.deltaTime;
+        if (DayTimerProgress)
+        {
+            StatA -= Time.deltaTime;
+            StatB -= Time.deltaTime;
+            StatC -= Time.deltaTime;
+            StatD -= Time.deltaTime;
 
-        ClampStats();
+            ClampStats();
 
-        DayProgress(Time.deltaTime);
+            DayTimeProgress(Time.deltaTime);
+        }
+
+        else
+        {
+            DayCardProgrss();
+        }
+
+       
+
+       
     }
 
     void ClampStats()
@@ -79,6 +97,8 @@ public class TestManager : MonoBehaviour
     public void GetNextCard()
     {
         spawner.SpawnRandomCard();
+        ClampStats();
+        cardCounter++;
     }
 
     public void ModifyStat(List<StatModifier> modifier)
@@ -89,27 +109,34 @@ public class TestManager : MonoBehaviour
             {
                 case StatType.StatA:
                     StatA += mod.amount;
-                    return;
+                    break;
                 case StatType.StatB:
                     StatB += mod.amount;
-                    return;
+                    break;
                 case StatType.StatC:
                     StatC += mod.amount;
-                    return;
+                    break;
                 case StatType.StatD:
                     StatD += mod.amount;
-                    return;
+                    break;
             }
         }
 
         ClampStats();
     }
 
-    public void DayProgress(float deltaTime)
+    public void DayTimeProgress(float deltaTime)
     {
         dayTimer += deltaTime;
 
         if (dayTimer >= dayDuration)
+        {
+            GoToNextDay();
+        }
+    }
+    public void DayCardProgrss()
+    {
+        if (cardCounter > cardsPerDay)
         {
             GoToNextDay();
         }
@@ -119,10 +146,11 @@ public class TestManager : MonoBehaviour
         if (spawner.currentCard != null)
         spawner.currentCard.RemoveCard();
 
-        dayTimer = 0;
         currentDay++;
-
         startDay = false;
+
+        if (DayTimerProgress) dayTimer = 0;
+        else cardCounter = -1;
     }
 
     public void StartDayProgress()
