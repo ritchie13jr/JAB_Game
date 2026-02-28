@@ -65,11 +65,15 @@ public class GameManager : MonoBehaviour
 
     void RestartGame()
     {
+        m_GameOverText.gameObject.SetActive(false);
+
         ResetStats();
 
         ResetProgressValues();
 
         m_gameOver = false;
+
+        m_Fade.FadeOut(() => { });
     }
 
     void ResetStats()
