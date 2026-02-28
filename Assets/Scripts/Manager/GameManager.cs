@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space)) RestartGame();
             return;
         }
-        
+
         if (!startDay)
         {
             if (DayTimerProgress)
