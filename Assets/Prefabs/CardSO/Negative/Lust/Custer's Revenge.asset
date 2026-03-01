@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Custer's Revenge
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 329ac02be502ada498c7aae3bd542009, type: 3}
   description: "\u201CPixels of Provocation! \u2018Custer\u2019s Revenge\u2019 Denounced
     as Gaming\u2019s Lowest Point!\u201D"
   publishEffects:

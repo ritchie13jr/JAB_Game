@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Liberate Hong Kong
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: a159a1ac2f9e70e4d8e56002ad6205eb, type: 3}
   description: "\u201CDigital Dissent! \u2018Liberate Hong Kong\u2019 Removed Amid
     Political Pressure!\u201D"
   publishEffects:

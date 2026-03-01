@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Devotion
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 4cf0f04b3a29b2045a4be2ed95e8cd9c, type: 3}
   description: "\u201CHorror Pulled Offline! \u2018Devotion\u2019 Disappears After
     Political Backlash!\u201D"
   publishEffects:

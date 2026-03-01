@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lethal Enforcers
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: da7d7863c1750144dbc59c13c32004c7, type: 3}
   description: "\u201CLight Gun Lightning Rod! \u2018Lethal Enforcers\u2019 Blamed
     for Blurring Line Between Game and Reality!\u201D"
   publishEffects:

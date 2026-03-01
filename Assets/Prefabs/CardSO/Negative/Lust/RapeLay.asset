@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RapeLay
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 1b33515af66977b489d890a902a9dec4, type: 3}
   description: "\u201CImport Inferno! \u2018RapeLay\u2019 Ignites Global Debate Over
     Content Limits!\u201D"
   publishEffects:

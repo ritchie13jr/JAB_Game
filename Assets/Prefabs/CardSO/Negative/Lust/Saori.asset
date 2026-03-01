@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Saori
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 5e617d23cc3af404090321c6dbbcf322, type: 3}
   description: "\u201CObscenity or Art? \u2018Saori\u2019 Seized in International
     Content Crackdown!\u201D"
   publishEffects:

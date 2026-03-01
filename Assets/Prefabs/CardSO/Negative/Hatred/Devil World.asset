@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Devil World
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 5bc08c32dfb82e442bef4428b4ff7666, type: 3}
   description: "\u201CHoly Smokes! \u2018Devil World\u2019 Banned for Religious Imagery!\u201D"
   publishEffects:
   - StatType: 0

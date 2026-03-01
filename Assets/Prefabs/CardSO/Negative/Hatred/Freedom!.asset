@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Freedom!
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: e81d1a0d37089394e90cc313e6e02ae2, type: 3}
   description: "\u201CRevolution or Rebellion? \u2018Freedom!\u2019 Game Triggers
     Government Ban!\u201D"
   publishEffects:

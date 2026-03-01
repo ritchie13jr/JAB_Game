@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Super Columbine Massacre RPG
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 93b5ab27f087d1e438ff98e6242204c3, type: 3}
   description: "\u201CShockwave Title! \u2018Super Columbian Massacre RPG\u2019 Sparks
     Global Condemnation!\u201D"
   publishEffects:

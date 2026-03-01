@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: (Q)Pokemon
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: da93754f3f80d07468bbd5d72a20f245, type: 3}
   description: 
   publishEffects:
   - StatType: 0
