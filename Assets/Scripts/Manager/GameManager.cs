@@ -126,6 +126,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ReturnToMainMenu();
+            return;
+        }
+
         if (m_gameOver || m_victory)
         {
             if (Input.GetKeyDown(KeyCode.Space)) RestartGame();
@@ -283,4 +289,25 @@ public class GameManager : MonoBehaviour
         });
     }
 
+    void ReturnToMainMenu()
+    {
+        m_gameOver = false;
+        m_victory = false;
+
+        m_GameOverText.gameObject.SetActive(false);
+        m_VictoryText.gameObject.SetActive(false);
+
+        ResetStats();
+        ResetProgressValues();
+
+        currentDay = 0;
+        startDay = false;
+
+        if (m_Spawner.currentCard != null)
+            m_Spawner.currentCard.RemoveCard();
+
+        m_Spawner.Reset();
+
+        MenuManager.Instance.ReturnToMenu();
+    }
 }
