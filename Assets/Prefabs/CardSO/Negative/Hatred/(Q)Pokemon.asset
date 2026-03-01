@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
   background: {fileID: 0}
-  description: 
+  description: "\u201CDemons in the Game Boy?! \u2018Pok\xE9mon\u2019 Sparks \u2018Satanic
+    Panic\u2019 \u2014 Critics Warn of \u2018Pocket Devils\u2019 and Occult Symbols
+    in Kids\u2019 Hands!\u201D"
   publishEffects:
   - StatType: 0
     amount: 10
   - StatType: 1
     amount: 0
   - StatType: 2
-    amount: 10
+    amount: 15
   - StatType: 3
     amount: 0

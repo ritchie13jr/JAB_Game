@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   title: 
   background: {fileID: 0}
-  description: 
+  description: "\u201CDysentery for dinner?! \u2018Oregon Trail\u2019 Accused of
+    Turning Classroom Kids Into Frontier Undertakers \u2014 Parents Question \u2018Death
+    as Homework!\u2019\u201D"
   publishEffects:
   - StatType: 0
-    amount: 10
+    amount: 5
   - StatType: 1
     amount: 0
   - StatType: 2
-    amount: 10
+    amount: 20
   - StatType: 3
     amount: 0
