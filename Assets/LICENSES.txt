@@ -1,0 +1,10 @@
+ASSETS:
+Background noise: 
+"14 of 14 Rain and Traffic through the Night.mp3" from "klankschap" on Freesound. 
+CC Attribution NonCommercial 4.0
+
+Key Press sounds: "Keyboard, computer, mechanical, typing, individual keys, press, button, click, tap, Two key presses_96Khz_Mono_ZoomH4n_NT5-003.wav" from "MattRuthSound" on Freesound.
+CC Attribution 4.0
+
+Skybox: "AllSky Free - 10 Sky / Skybox Set" from "rpgwhitelock" on the Unity Asset Store.
+Standard Unity Asset Store EULA
