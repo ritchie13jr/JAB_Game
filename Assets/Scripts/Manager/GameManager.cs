@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool LoseOnAnyZero = true;
     public bool LoseOnAnyMax = false;
     public bool WinOnAllPublished = true;
+    public bool StatDecayDaily = true;
     private bool m_gameOver;
     private bool m_victory = false;
 
@@ -199,7 +200,7 @@ public class GameManager : MonoBehaviour
     }
     void GoToNextDay()
     {
-        ModifyStat(statDecay);
+        if (StatDecayDaily) ModifyStat(statDecay);
 
         if (m_Spawner.currentCard != null)
             m_Spawner.currentCard.RemoveCard();
