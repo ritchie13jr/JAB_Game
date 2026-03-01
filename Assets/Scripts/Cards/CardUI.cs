@@ -29,7 +29,7 @@ public class CardUI : MonoBehaviour
         GameManager.Instance.ModifyStat(cardData.publishEffects);
         RemoveCard();
         GameManager.Instance.GetNextCard();
-        GameManager.Instance.m_Spawner.allCards.Remove(cardData);
+        GameManager.Instance.m_Spawner.RemoveCard(cardData);
     }
 
     public void OnNoButton()

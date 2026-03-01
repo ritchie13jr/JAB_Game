@@ -10,11 +10,14 @@ public class GameManager : MonoBehaviour
     public CardSpawner m_Spawner;
     public Fade m_Fade;
     public TextMeshProUGUI m_GameOverText;
+    public TextMeshProUGUI m_VictoryText;
 
     [Header("Win / Lose onditions")]
     public bool LoseOnAnyZero = true;
     public bool LoseOnAnyMax = false;
+    public bool WinOnAllPublished = true;
     private bool m_gameOver;
+    private bool m_victory = false;
 
     [Header("Stats")]
     public Dictionary<string, float> stats = new Dictionary<string, float>(); //!
@@ -92,9 +95,12 @@ public class GameManager : MonoBehaviour
     void RestartGame()
     {
         m_gameOver = false;
+        m_victory = false;
         m_GameOverText.gameObject.SetActive(false);
+        m_VictoryText.gameObject.SetActive(false);
 
         ResetStats();
+        m_Spawner.Reset();
 
         m_Fade.FadeOut(() =>
         {
@@ -119,7 +125,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (m_gameOver)
+        if (m_gameOver || m_victory)
         {
             if (Input.GetKeyDown(KeyCode.Space)) RestartGame();
             return;
@@ -156,6 +162,7 @@ public class GameManager : MonoBehaviour
         }
 
         if (CheckGameOverConditions()) GameOver();
+        if (CheckWinConditions()) Win();
     }
 
     void ClampStats()
@@ -188,11 +195,12 @@ public class GameManager : MonoBehaviour
         if (cardCounter > cardsPerDay)
         {
             GoToNextDayWithFade();
-            ModifyStat(statDecay);
         }
     }
     void GoToNextDay()
     {
+        ModifyStat(statDecay);
+
         if (m_Spawner.currentCard != null)
             m_Spawner.currentCard.RemoveCard();
 
@@ -252,5 +260,26 @@ public class GameManager : MonoBehaviour
         });
     }
 
+    bool CheckWinConditions()
+    {
+        if (WinOnAllPublished)
+        {
+            if (m_Spawner.allCards.Count == 0)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    void Win()
+    {
+        m_victory = true;
+        m_Fade.FadeIn(() =>
+        {
+            m_VictoryText.gameObject.SetActive(true);
+        });
+    }
 
 }
