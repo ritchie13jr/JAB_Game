@@ -740,6 +740,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2379793492607960716, guid: d735e5515a59b14488c120b4f4abd311, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 5892294087055653160, guid: d735e5515a59b14488c120b4f4abd311, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -791,6 +795,26 @@ PrefabInstance:
     - target: {fileID: 6859285649927910746, guid: d735e5515a59b14488c120b4f4abd311, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893190031958194714, guid: d735e5515a59b14488c120b4f4abd311, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893190031958194714, guid: d735e5515a59b14488c120b4f4abd311, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.805
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893190031958194714, guid: d735e5515a59b14488c120b4f4abd311, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893190031958194714, guid: d735e5515a59b14488c120b4f4abd311, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893190031958194714, guid: d735e5515a59b14488c120b4f4abd311, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.015
       objectReference: {fileID: 0}
     - target: {fileID: 8082083570861395326, guid: d735e5515a59b14488c120b4f4abd311, type: 3}
       propertyPath: m_Enabled
@@ -1319,7 +1343,7 @@ MonoBehaviour:
   DayTimerProgress: 0
   dayDuration: 24
   dayTimer: 0
-  cardsPerDay: 3
+  cardsPerDay: 100
   cardCounter: 0
 --- !u!4 &994194396
 Transform:
@@ -3464,6 +3488,14 @@ PrefabInstance:
     - target: {fileID: 2449956169891599404, guid: 6b37d2e90a583a343881064d81a80141, type: 3}
       propertyPath: m_Name
       value: CreditsCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174400573940048518, guid: 6b37d2e90a583a343881064d81a80141, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4174400573940048518, guid: 6b37d2e90a583a343881064d81a80141, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6632544374016767656, guid: 6b37d2e90a583a343881064d81a80141, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
