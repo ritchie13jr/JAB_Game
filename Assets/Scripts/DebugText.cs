@@ -19,8 +19,7 @@ public class DebugText : MonoBehaviour
 
     void Start()
     {
-        if (componentTypeName == null || componentTypeName.Length == 0)
-            ;
+        //if (componentTypeName == null || componentTypeName.Length == 0)
 
         textMesh = GetComponent<TextMeshProUGUI>();
         originalText = textMesh.text;
