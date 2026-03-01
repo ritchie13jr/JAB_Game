@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private bool m_gameOver;
 
     [Header("Stats")]
-    private Dictionary<string, float> stats = new Dictionary<string, float>();
+    public Dictionary<string, float> stats = new Dictionary<string, float>(); //!
 
     public float maxForStat = 100.0f;
     public float statInitialValue = 25.0f;
