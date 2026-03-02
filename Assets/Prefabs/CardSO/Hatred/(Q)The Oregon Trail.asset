@@ -18,10 +18,10 @@ MonoBehaviour:
     Turning Classroom Kids Into Frontier Undertakers!\""
   publishEffects:
   - StatType: 0
-    amount: 10
+    amount: 5
   - StatType: 1
     amount: 0
   - StatType: 2
-    amount: 10
+    amount: 15
   - StatType: 3
     amount: 0

@@ -18,10 +18,10 @@ MonoBehaviour:
     and Occult Symbols in Kids\u2019 Hands!\u201D"
   publishEffects:
   - StatType: 0
-    amount: 10
+    amount: 3
   - StatType: 1
     amount: 0
   - StatType: 2
-    amount: 10
+    amount: 15
   - StatType: 3
     amount: 0
