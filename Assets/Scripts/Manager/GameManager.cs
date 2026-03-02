@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public CardSpawner m_Spawner;
     public Fade m_Fade;
-    public TextMeshProUGUI m_GameOverText;
-    public TextMeshProUGUI m_VictoryText;
+    public Fade m_GameOverFade;
+    public Fade m_VictoryFade;
+    //public TextMeshProUGUI m_GameOverText;
+    //public TextMeshProUGUI m_VictoryText;
 
     [Header("Win / Lose onditions")]
     public bool LoseOnAnyZero = true;
@@ -97,8 +99,8 @@ public class GameManager : MonoBehaviour
     {
         m_gameOver = false;
         m_victory = false;
-        m_GameOverText.gameObject.SetActive(false);
-        m_VictoryText.gameObject.SetActive(false);
+        m_GameOverFade.gameObject.SetActive(false);
+        m_VictoryFade.gameObject.SetActive(false);
 
         ResetStats();
         m_Spawner.Reset();
@@ -261,9 +263,9 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         m_gameOver = true;
-        m_Fade.FadeIn(() =>
+        m_GameOverFade.FadeIn(() =>
         {
-            m_GameOverText.gameObject.SetActive(true);
+            m_GameOverFade.gameObject.SetActive(true);
         });
     }
 
@@ -283,9 +285,9 @@ public class GameManager : MonoBehaviour
     void Win()
     {
         m_victory = true;
-        m_Fade.FadeIn(() =>
+        m_VictoryFade.FadeIn(() =>
         {
-            m_VictoryText.gameObject.SetActive(true);
+            m_VictoryFade.gameObject.SetActive(true);
         });
     }
 
@@ -294,8 +296,8 @@ public class GameManager : MonoBehaviour
         m_gameOver = false;
         m_victory = false;
 
-        m_GameOverText.gameObject.SetActive(false);
-        m_VictoryText.gameObject.SetActive(false);
+        m_GameOverFade.gameObject.SetActive(false);
+        m_VictoryFade.gameObject.SetActive(false);
 
         ResetStats();
         ResetProgressValues();
