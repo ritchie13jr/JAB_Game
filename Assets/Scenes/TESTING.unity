@@ -1492,8 +1492,8 @@ MonoBehaviour:
   m_Fade: {fileID: 2093907354}
   m_GameOverText: {fileID: 858433254}
   m_VictoryText: {fileID: 1799641344}
-  LoseOnAnyZero: 0
-  LoseOnAnyMax: 0
+  LoseOnAnyZero: 1
+  LoseOnAnyMax: 1
   WinOnAllPublished: 1
   StatDecayDaily: 1
   maxForStat: 100
@@ -1511,7 +1511,7 @@ MonoBehaviour:
   DayTimerProgress: 0
   dayDuration: 24
   dayTimer: 0
-  cardsPerDay: 100
+  cardsPerDay: 3
   cardCounter: 0
 --- !u!4 &994194396
 Transform:
