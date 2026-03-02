@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         stats.Add("VIOLENCE", statInitialValue);
         stats.Add("LUST", statInitialValue);
         stats.Add("HATRED", statInitialValue);
-        stats.Add("PROGRESS", statInitialValue);
+        //stats.Add("PROGRESS", statInitialValue);
         maxCardsToPublish = m_Spawner.allCards.Count;
         currentPublishedCards = 0;
 
@@ -93,9 +93,9 @@ public class GameManager : MonoBehaviour
                 case StatType.StatC:
                     stats["HATRED"] += mod.amount;
                     break;
-                case StatType.StatD:
-                    stats["PROGRESS"] += mod.amount;
-                    break;
+                //case StatType.StatD:
+                //    stats["PROGRESS"] += mod.amount;
+                //    break;
             }
         }
 

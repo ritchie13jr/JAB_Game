@@ -1690,7 +1690,7 @@ MonoBehaviour:
   WinOnAllPublished: 1
   StatDecayDaily: 1
   maxForStat: 100
-  statInitialValue: 25
+  statInitialValue: 26
   statDecay:
   - StatType: 0
     amount: -10

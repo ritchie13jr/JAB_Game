@@ -33,12 +33,12 @@ public class HUDController : MonoBehaviour
         float violenceTarget = gm.stats["VIOLENCE"] / max;
         float lustTarget = gm.stats["LUST"] / max;
         float hatredTarget = gm.stats["HATRED"] / max;
-        float mysteryTarget = gm.stats["PROGRESS"] / max;
+        //float mysteryTarget = gm.stats["PROGRESS"] / max;
 
         violenceFill.fillAmount = Mathf.Lerp(violenceFill.fillAmount, violenceTarget, Time.deltaTime * speed);
         lustFill.fillAmount = Mathf.Lerp(lustFill.fillAmount, lustTarget, Time.deltaTime * speed);
         hatredFill.fillAmount = Mathf.Lerp(hatredFill.fillAmount, hatredTarget, Time.deltaTime * speed);
-        mysteryFill.fillAmount = Mathf.Lerp(mysteryFill.fillAmount, mysteryTarget, Time.deltaTime * speed);
+        //mysteryFill.fillAmount = Mathf.Lerp(mysteryFill.fillAmount, mysteryTarget, Time.deltaTime * speed);
     }
 
     void UpdateDayTimer()
