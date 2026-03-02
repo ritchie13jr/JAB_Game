@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     public int cardCounter = 0; //!
 
     [Header("Game Progress")]
-    int maxCardsToPublish = 0;
+    public int maxCardsToPublish = 0;
     int currentPublishedCards = 0;
 
 
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         stats.Add("VIOLENCE", statInitialValue);
         stats.Add("LUST", statInitialValue);
         stats.Add("HATRED", statInitialValue);
-        //stats.Add("PROGRESS", statInitialValue);
+        stats.Add("PROGRESS", 0);
         maxCardsToPublish = m_Spawner.allCards.Count;
         currentPublishedCards = 0;
 
@@ -93,9 +93,9 @@ public class GameManager : MonoBehaviour
                 case StatType.StatC:
                     stats["HATRED"] += mod.amount;
                     break;
-                //case StatType.StatD:
-                //    stats["PROGRESS"] += mod.amount;
-                //    break;
+                case StatType.StatD:
+                    stats["PROGRESS"] += mod.amount;
+                    break;
             }
         }
 
@@ -248,10 +248,11 @@ public class GameManager : MonoBehaviour
     bool CheckGameOverConditions()
     {
         if (LoseOnAnyZero)
-        {
-            foreach (var value in stats.Values)
             {
-                if (value <= 0.0f) return true;
+            foreach (KeyValuePair<string ,float > p in stats)
+            {
+                if (p.Key == "PROGRESS") continue;
+                if (p.Value <= 0.0f) return true;
             }
         }
 
