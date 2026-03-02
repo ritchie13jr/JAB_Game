@@ -796,3 +796,5 @@ MonoBehaviour:
   publishButton: {fileID: 2813819268972999226}
   noButton: {fileID: 8714763710955220710}
   backgroundImg: {fileID: 5238801063410539838}
+  publishSFX: {fileID: 8300000, guid: 2e987aaabfea09b48a3358ef1e32c198, type: 3}
+  noSFX: {fileID: 8300000, guid: 0fa47b45920fa3a4c84d8345ffd65df7, type: 3}
