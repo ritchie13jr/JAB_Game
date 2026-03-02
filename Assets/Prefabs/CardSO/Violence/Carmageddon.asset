@@ -18,7 +18,7 @@ MonoBehaviour:
     Outrage Over Roadkill Points!\u201D"
   publishEffects:
   - StatType: 0
-    amount: 20
+    amount: 17
   - StatType: 1
     amount: 0
   - StatType: 2

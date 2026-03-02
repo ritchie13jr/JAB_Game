@@ -18,7 +18,7 @@ MonoBehaviour:
     Vehicular Violence!\u201D"
   publishEffects:
   - StatType: 0
-    amount: 22
+    amount: 17
   - StatType: 1
     amount: 0
   - StatType: 2
