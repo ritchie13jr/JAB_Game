@@ -9,12 +9,16 @@ public class MenuManager : MonoBehaviour
     public Transform cameraTransform;
     public Transform menuPoint;
     public Transform gamePoint;
+    public Transform playPoint;
     public GameObject menuCanvas;
     public GameObject creditsCanvas;
+
+    Transform[] cameraPointsToPlay; 
 
     private bool isInTransition;
     float lerpTimer;
 
+    public float playTransitionSpeed = 4f;
     public float speed = 2f;
 
     void Awake()
@@ -23,6 +27,7 @@ public class MenuManager : MonoBehaviour
 
         cameraTransform.position = menuPoint.position;
         cameraTransform.rotation = menuPoint.rotation;
+        cameraPointsToPlay = new Transform[] {gamePoint, playPoint};
 
         menuCanvas.SetActive(true);
         creditsCanvas.SetActive(false);
@@ -31,7 +36,7 @@ public class MenuManager : MonoBehaviour
     public void PlayGame()
     {
         menuCanvas.SetActive(false);
-        StartCoroutine(MoveCamera(gamePoint));
+        StartCoroutine(MoveCameraThroughPoints(cameraPointsToPlay));
     }
 
     public void ExitGame()
@@ -60,6 +65,37 @@ public class MenuManager : MonoBehaviour
         menuCanvas.SetActive(true);
         creditsCanvas.SetActive(false);
     }
+
+    IEnumerator MoveCameraThroughPoints(Transform[] points)
+    {
+        isInTransition = true;
+        
+        float transDuration = playTransitionSpeed / points.Length;
+
+        Vector3 startPos = cameraTransform.position;
+        Quaternion startRot = cameraTransform.rotation;
+
+        foreach (Transform t in points) 
+        {
+            lerpTimer = 0.0f;
+            while (lerpTimer < transDuration) 
+            {
+                float pct = lerpTimer / transDuration;
+                cameraTransform.position = Vector3.Lerp(startPos, t.position, pct);
+                cameraTransform.rotation = Quaternion.Lerp(startRot, t.rotation, pct);
+
+                lerpTimer += Time.deltaTime;
+                yield return null;
+            }
+            cameraTransform.position = t.position;
+            cameraTransform.rotation = t.rotation;
+
+            startPos = t.position;
+            startRot = t.rotation;
+        }
+
+        isInTransition = false;
+    } 
 
     IEnumerator MoveCamera(Transform target)
     {
