@@ -311,20 +311,23 @@ MonoBehaviour:
   cardPrefab: {fileID: 3890904030511742534, guid: 59e23d94c48857e45a8dc88c205ba464, type: 3}
   cardContainer: {fileID: 1638687927}
   allCards:
-  - {fileID: 11400000, guid: 09cb7e6267cb85147a705fb9bc4add68, type: 2}
-  - {fileID: 11400000, guid: 2c271c6b9be555649bd62c2034ff3ab6, type: 2}
-  - {fileID: 11400000, guid: 74c1edff7c2169c45a589a8637518aee, type: 2}
-  - {fileID: 11400000, guid: 7f69fc4c727866f4aa9e8c9ea3365928, type: 2}
-  - {fileID: 11400000, guid: ced50c4e0db25344da969754c751dc50, type: 2}
-  - {fileID: 11400000, guid: ba1a2f8d4ddb9c64f84e8e4ffaaf7dd0, type: 2}
-  - {fileID: 11400000, guid: e8807635b15b13e4494c18fb47be26ac, type: 2}
-  - {fileID: 11400000, guid: 38e2d6684721f8b44a76dc8ab507c72f, type: 2}
-  - {fileID: 11400000, guid: 6281f30b10148f1479eaab20b5ae03bb, type: 2}
+  - {fileID: 11400000, guid: 90d23e246a03da34e92f7a92d8f3fb9d, type: 2}
+  - {fileID: 11400000, guid: cd21905db84351d45b2f288525109aa6, type: 2}
   - {fileID: 11400000, guid: df37c1722b72980458d926fc757325b3, type: 2}
   - {fileID: 11400000, guid: 06464db33617a274da4e859db18a7eb3, type: 2}
   - {fileID: 11400000, guid: 2150b6612fad59a4fbd96e86cfb6a951, type: 2}
   - {fileID: 11400000, guid: 0d3b7feccf6fa3b4da9bd56e64f61be9, type: 2}
   - {fileID: 11400000, guid: 6b09c36b441f1044fb33bd4c8ee62d0d, type: 2}
+  - {fileID: 11400000, guid: ba1a2f8d4ddb9c64f84e8e4ffaaf7dd0, type: 2}
+  - {fileID: 11400000, guid: e8807635b15b13e4494c18fb47be26ac, type: 2}
+  - {fileID: 11400000, guid: 38e2d6684721f8b44a76dc8ab507c72f, type: 2}
+  - {fileID: 11400000, guid: 6281f30b10148f1479eaab20b5ae03bb, type: 2}
+  - {fileID: 11400000, guid: 13c46d2892a6e154d8d1581d89ed5b36, type: 2}
+  - {fileID: 11400000, guid: 09cb7e6267cb85147a705fb9bc4add68, type: 2}
+  - {fileID: 11400000, guid: 2c271c6b9be555649bd62c2034ff3ab6, type: 2}
+  - {fileID: 11400000, guid: 74c1edff7c2169c45a589a8637518aee, type: 2}
+  - {fileID: 11400000, guid: 7f69fc4c727866f4aa9e8c9ea3365928, type: 2}
+  - {fileID: 11400000, guid: ced50c4e0db25344da969754c751dc50, type: 2}
   currentCard: {fileID: 0}
 --- !u!4 &545682104
 Transform:

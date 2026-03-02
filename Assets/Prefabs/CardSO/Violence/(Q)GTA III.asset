@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2e15fe6f1053d4cbf79d17398664e4, type: 3}
   m_Name: (Q)GTA III
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  title: 
+  title: GTA III
   background: {fileID: 21300000, guid: d01c2db006e113c4cbcd311ae1dc131e, type: 3}
-  description: 
+  description: "\u201CKiller connection?! After a Notorious Murder Case, \u2018GTA
+    III\u2019 Dragged Into Court of Public Opinion \u2014 Is Liberty City Inspiring
+    Real-World Crime?\u201D"
   publishEffects:
   - StatType: 0
     amount: 10
