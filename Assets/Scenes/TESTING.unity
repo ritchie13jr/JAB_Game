@@ -1690,14 +1690,14 @@ MonoBehaviour:
   WinOnAllPublished: 1
   StatDecayDaily: 1
   maxForStat: 100
-  statInitialValue: 26
+  statInitialValue: 60
   statDecay:
   - StatType: 0
-    amount: -10
+    amount: -20
   - StatType: 1
-    amount: -10
+    amount: -20
   - StatType: 2
-    amount: -10
+    amount: -20
   - StatType: 3
     amount: 0
   currentDay: 0
