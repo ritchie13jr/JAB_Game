@@ -1650,6 +1650,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1371024604}
     - target: {fileID: 5185632006210189586, guid: bc93ab40516b2b14690dbf4b5f373eca, type: 3}
+      propertyPath: playPoint
+      value: 
+      objectReference: {fileID: 1236850181}
+    - target: {fileID: 5185632006210189586, guid: bc93ab40516b2b14690dbf4b5f373eca, type: 3}
       propertyPath: menuCanvas
       value: 
       objectReference: {fileID: 937950773}
@@ -1661,6 +1665,10 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1216628007}
+    - target: {fileID: 5185632006210189586, guid: bc93ab40516b2b14690dbf4b5f373eca, type: 3}
+      propertyPath: playTransitionSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7371653223885388746, guid: bc93ab40516b2b14690dbf4b5f373eca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2268,6 +2276,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &1236850181 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4653710898915614582, guid: 7f774815d06b05b488e7be51bee8cf04, type: 3}
+  m_PrefabInstance: {fileID: 1371024602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1267225110 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5185632006210189586, guid: bc93ab40516b2b14690dbf4b5f373eca, type: 3}
@@ -2467,6 +2480,10 @@ PrefabInstance:
     - target: {fileID: 5838802015794293822, guid: 7f774815d06b05b488e7be51bee8cf04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805999947000741176, guid: 7f774815d06b05b488e7be51bee8cf04, type: 3}
+      propertyPath: m_Name
+      value: PlayPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
