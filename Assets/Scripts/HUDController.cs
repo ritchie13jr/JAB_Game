@@ -33,7 +33,7 @@ public class HUDController : MonoBehaviour
         float violenceTarget = gm.stats["VIOLENCE"] / max;
         float lustTarget = gm.stats["LUST"] / max;
         float hatredTarget = gm.stats["HATRED"] / max;
-        float mysteryTarget = gm.stats["?"] / max;
+        float mysteryTarget = gm.stats["PROGRESS"] / max;
 
         violenceFill.fillAmount = Mathf.Lerp(violenceFill.fillAmount, violenceTarget, Time.deltaTime * speed);
         lustFill.fillAmount = Mathf.Lerp(lustFill.fillAmount, lustTarget, Time.deltaTime * speed);
