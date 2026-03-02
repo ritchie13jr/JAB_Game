@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour
     public int cardsPerDay = 3;
     public int cardCounter = 0; //!
 
+    [Header("Game Progress")]
+    int maxCardsToPublish = 0;
+    int currentPublishedCards = 0;
+
 
     private void Awake()
     {
@@ -68,7 +72,9 @@ public class GameManager : MonoBehaviour
         stats.Add("VIOLENCE", statInitialValue);
         stats.Add("LUST", statInitialValue);
         stats.Add("HATRED", statInitialValue);
-        stats.Add("?", statInitialValue);
+        stats.Add("PROGRESS", statInitialValue);
+        maxCardsToPublish = m_Spawner.allCards.Count;
+        currentPublishedCards = 0;
 
         ClampStats();
     }
@@ -88,7 +94,7 @@ public class GameManager : MonoBehaviour
                     stats["HATRED"] += mod.amount;
                     break;
                 case StatType.StatD:
-                    stats["?"] += mod.amount;
+                    stats["PROGRESS"] += mod.amount;
                     break;
             }
         }
@@ -289,6 +295,11 @@ public class GameManager : MonoBehaviour
         {
             m_VictoryFade.gameObject.SetActive(true);
         });
+    }
+
+    public void CardPublished() 
+    {
+        currentPublishedCards += 1;
     }
 
     void ReturnToMainMenu()

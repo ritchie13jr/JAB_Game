@@ -13,7 +13,7 @@ public class CardData : ScriptableObject
     public string description;
 
     [Header("Publish")]
-    [Tooltip("Violence, Lust, Hatred, ?")]
+    [Tooltip("Violence, Lust, Hatred, Progress")]
     public List<StatModifier> publishEffects;
 
 }
