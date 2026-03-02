@@ -12,6 +12,9 @@ public class MenuManager : MonoBehaviour
     public GameObject menuCanvas;
     public GameObject creditsCanvas;
 
+    private bool isInTransition;
+    float lerpTimer;
+
     public float speed = 2f;
 
     void Awake()
@@ -60,22 +63,42 @@ public class MenuManager : MonoBehaviour
 
     IEnumerator MoveCamera(Transform target)
     {
-        while (Vector3.Distance(cameraTransform.position, target.position) > 0.01f)
+        isInTransition = true;
+        lerpTimer = 0.0f;
+        float l_pct = 0.0f;
+        Vector3 l_currentPos = cameraTransform.position;
+        Quaternion l_currentRot = cameraTransform.rotation;
+
+        while (l_pct < 1.0f)
         {
+            l_pct = Mathf.Min(lerpTimer / speed, 1.0f);
+
             cameraTransform.position = Vector3.Lerp(
-                cameraTransform.position,
-                target.position,
-                Time.deltaTime * speed);
+            l_currentPos,
+            target.position,
+            l_pct);
 
             cameraTransform.rotation = Quaternion.Lerp(
-                cameraTransform.rotation,
+                l_currentRot,
                 target.rotation,
-                Time.deltaTime * speed);
+                l_pct);
+
+            //Debug.Log(l_pct);
 
             yield return null;
-        }
+        }        
 
         cameraTransform.position = target.position;
         cameraTransform.rotation = target.rotation;
+
+        isInTransition = false;
+    }
+
+    private void Update()
+    {
+        if (isInTransition)
+        {
+            lerpTimer += Time.deltaTime;
+        }
     }
 }
