@@ -51,8 +51,8 @@ public class MenuManager : MonoBehaviour
 
     public void ExitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-        //Application.Quit(); esta es para cuando hagamos la build con esta linea mejor
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
     public void OpenCredits()
     {
