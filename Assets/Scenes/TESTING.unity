@@ -8162,12 +8162,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4174400573940048518, guid: 6b37d2e90a583a343881064d81a80141, type: 3}
+      propertyPath: m_text
+      value: "CREDITS\n\nEnzo Hamblot M\xE1rquez - Programmer\nRicardo Fuster Arcos
+        - Programmer\nJoan Forcadell Querol - Programmer\nJosep Basart P\xE9rez -
+        Artist\n\nThanks for playing!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174400573940048518, guid: 6b37d2e90a583a343881064d81a80141, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: fb14b58c947457847b5e75dacace1920, type: 2}
+    - target: {fileID: 4174400573940048518, guid: 6b37d2e90a583a343881064d81a80141, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4348894460712822856, guid: fb14b58c947457847b5e75dacace1920, type: 2}
     - target: {fileID: 4174400573940048518, guid: 6b37d2e90a583a343881064d81a80141, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6632544374016767656, guid: 6b37d2e90a583a343881064d81a80141, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
