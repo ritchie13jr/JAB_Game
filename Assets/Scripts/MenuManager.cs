@@ -6,20 +6,25 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
 
+    [Header("CameraPooints")]
     public Transform cameraTransform;
     public Transform menuPoint;
     public Transform gamePoint;
     public Transform playPoint;
+
+    [Header("Canvas")]
     public GameObject menuCanvas;
     public GameObject creditsCanvas;
+    public GameObject howToPlayCanvas;
+
+    [Header("TransitionTime")]
+    public float playTransitionTime = 4f;
+    public float transitionTime = 2f;
 
     Transform[] cameraPointsToPlay; 
 
     private bool isInTransition;
     float lerpTimer;
-
-    public float playTransitionSpeed = 4f;
-    public float speed = 2f;
 
     void Awake()
     {
@@ -31,6 +36,7 @@ public class MenuManager : MonoBehaviour
 
         menuCanvas.SetActive(true);
         creditsCanvas.SetActive(false);
+        howToPlayCanvas.SetActive(false);
     }
 
     public void PlayGame()
@@ -48,6 +54,18 @@ public class MenuManager : MonoBehaviour
     {
         menuCanvas.SetActive(false);
         creditsCanvas.SetActive(true);
+    }
+
+    public void OpenHowToPlay() 
+    {
+        menuCanvas.SetActive(false);
+        howToPlayCanvas.SetActive(true);
+    }
+
+    public void CloseHowToPlay() 
+    {
+        menuCanvas.SetActive(true);
+        howToPlayCanvas.SetActive(false);
     }
 
     public void CloseCredits()
@@ -70,7 +88,7 @@ public class MenuManager : MonoBehaviour
     {
         isInTransition = true;
         
-        float transDuration = playTransitionSpeed / points.Length;
+        float transDuration = playTransitionTime / points.Length;
 
         Vector3 startPos = cameraTransform.position;
         Quaternion startRot = cameraTransform.rotation;
@@ -107,7 +125,7 @@ public class MenuManager : MonoBehaviour
 
         while (l_pct < 1.0f)
         {
-            l_pct = Mathf.Min(lerpTimer / speed, 1.0f);
+            l_pct = Mathf.Min(lerpTimer / transitionTime, 1.0f);
 
             cameraTransform.position = Vector3.Lerp(
             l_currentPos,
