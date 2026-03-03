@@ -149,7 +149,7 @@ public class MenuManager : MonoBehaviour
         {
             l_pct = Mathf.Min(lerpTimer / transitionTime, 1.0f);
 
-            cameraTransform.position = Vector3.Lerp(
+            cameraTransform.position = Vector3.Slerp(
             l_currentPos,
             target.position,
             l_pct);

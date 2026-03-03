@@ -3843,6 +3843,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 553093108}
     - target: {fileID: 5185632006210189586, guid: bc93ab40516b2b14690dbf4b5f373eca, type: 3}
+      propertyPath: transitionTime
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5185632006210189586, guid: bc93ab40516b2b14690dbf4b5f373eca, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1216628007}
