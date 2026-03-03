@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,7 +17,8 @@ public class MenuManager : MonoBehaviour
     public GameObject menuCanvas;
     public GameObject creditsCanvas;
     public GameObject howToPlayCanvas;
-
+    public List<GameObject> pages;
+    
     [Header("TransitionTime")]
     public float playTransitionTime = 4f;
     public float transitionTime = 2f;
@@ -24,7 +26,8 @@ public class MenuManager : MonoBehaviour
     Transform[] cameraPointsToPlay; 
 
     private bool isInTransition;
-    float lerpTimer;
+    private float lerpTimer;
+    private int currentPage;
 
     void Awake()
     {
@@ -34,6 +37,7 @@ public class MenuManager : MonoBehaviour
         cameraTransform.rotation = menuPoint.rotation;
         cameraPointsToPlay = new Transform[] {gamePoint, playPoint};
 
+        currentPage = 0;
         menuCanvas.SetActive(true);
         creditsCanvas.SetActive(false);
         howToPlayCanvas.SetActive(false);
@@ -60,14 +64,32 @@ public class MenuManager : MonoBehaviour
     {
         menuCanvas.SetActive(false);
         howToPlayCanvas.SetActive(true);
+        pages[currentPage].SetActive(true);
     }
 
     public void CloseHowToPlay() 
     {
+        if (currentPage >= pages.Count)
+            currentPage = 0;
+
         menuCanvas.SetActive(true);
         howToPlayCanvas.SetActive(false);
+        pages[currentPage].SetActive(false);
+        currentPage = 0;
     }
 
+    public void NextPage() 
+    {
+        pages[currentPage].SetActive(false);
+        currentPage++;
+        if (currentPage >= pages.Count) 
+        {
+            CloseHowToPlay();
+            currentPage = 0;
+        }
+
+        pages[currentPage].SetActive(true);
+    }
     public void CloseCredits()
     {
         creditsCanvas.SetActive(false);
