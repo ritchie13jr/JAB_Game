@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public Fade m_Fade;
     public Fade m_GameOverFade;
     public Fade m_VictoryFade;
+    public TextMeshProUGUI m_GameOverText;
+    public TextMeshProUGUI m_VictoryText;
     //public TextMeshProUGUI m_GameOverText;
     //public TextMeshProUGUI m_VictoryText;
 
@@ -106,7 +108,9 @@ public class GameManager : MonoBehaviour
         m_gameOver = false;
         m_victory = false;
         m_GameOverFade.gameObject.SetActive(false);
+        m_GameOverText.gameObject.SetActive(false);
         m_VictoryFade.gameObject.SetActive(false);
+        m_VictoryText.gameObject.SetActive(false);
 
         ResetStats();
         m_Spawner.Reset();
@@ -273,6 +277,7 @@ public class GameManager : MonoBehaviour
         m_GameOverFade.FadeIn(() =>
         {
             m_GameOverFade.gameObject.SetActive(true);
+            m_GameOverText.gameObject.SetActive(true);
         });
     }
 
@@ -295,6 +300,7 @@ public class GameManager : MonoBehaviour
         m_VictoryFade.FadeIn(() =>
         {
             m_VictoryFade.gameObject.SetActive(true);
+            m_VictoryText.gameObject.SetActive(true);
         });
     }
 
@@ -309,7 +315,9 @@ public class GameManager : MonoBehaviour
         m_victory = false;
 
         m_GameOverFade.gameObject.SetActive(false);
+        m_GameOverText.gameObject.SetActive(false);
         m_VictoryFade.gameObject.SetActive(false);
+        m_VictoryText.gameObject.SetActive(false);
 
         ResetStats();
         ResetProgressValues();
