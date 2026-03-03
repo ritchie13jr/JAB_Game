@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour
     public GameObject menuCanvas;
     public GameObject creditsCanvas;
     public GameObject howToPlayCanvas;
+    public GameObject UI;
     public List<GameObject> pages;
     
     [Header("TransitionTime")]
@@ -39,6 +40,7 @@ public class MenuManager : MonoBehaviour
 
         currentPage = 0;
         menuCanvas.SetActive(true);
+        UI.SetActive(false);
         creditsCanvas.SetActive(false);
         howToPlayCanvas.SetActive(false);
     }
@@ -46,6 +48,7 @@ public class MenuManager : MonoBehaviour
     public void PlayGame()
     {
         menuCanvas.SetActive(false);
+        UI.SetActive(true);
         StartCoroutine(MoveCameraThroughPoints(cameraPointsToPlay));
     }
 

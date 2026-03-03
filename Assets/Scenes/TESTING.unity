@@ -3819,6 +3819,10 @@ PrefabInstance:
       value: MenuManager
       objectReference: {fileID: 0}
     - target: {fileID: 5185632006210189586, guid: bc93ab40516b2b14690dbf4b5f373eca, type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 800466374}
+    - target: {fileID: 5185632006210189586, guid: bc93ab40516b2b14690dbf4b5f373eca, type: 3}
       propertyPath: speed
       value: 0.8
       objectReference: {fileID: 0}
