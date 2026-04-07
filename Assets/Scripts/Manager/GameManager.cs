@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
             m_Fade.gameObject.SetActive(false);
             ResetProgressValues();
             startDay = false;
+            currentDay = 0;
         });
     }
 

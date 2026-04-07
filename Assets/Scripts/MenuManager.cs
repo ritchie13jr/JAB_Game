@@ -104,7 +104,8 @@ public class MenuManager : MonoBehaviour
         StopAllCoroutines();
 
         StartCoroutine(MoveCamera(menuPoint));
-
+        
+        UI.SetActive(false);
         menuCanvas.SetActive(true);
         creditsCanvas.SetActive(false);
     }
